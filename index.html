@@ -1,0 +1,44 @@
+<html>
+<body>
+<head>
+    <meta charset="utf-8">
+    <title>&gt;A&lt;极简图床</title>
+    <link rel="shortcut icon" href="//cdn.hap5.top/photo/ico.png">
+    <link rel="bookmark" href="//cdn.hap5.top/photo/ico.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />  
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src='upweibo.js'></script>
+    <link rel="stylesheet"  href='style.css'>
+  </head>
+
+  <form method='post' enctype='multipart/form-data' action='https://api.imbottle.com/wup.php' id='wbpic'>
+  <input type='file' name='wbpic' class='fp' id='wbpic'></input>
+  </form>
+
+  <div class='notice'>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p id='nt' class='text'>
+        拖拽图片或者点击页面.
+    </p>
+    <p><img src='' id='showfirst'></p>
+  </div>
+
+  <script>
+  function upload(){
+  var backurl=upweibo('wbpic');
+      if(backurl=='error'||backurl==''){
+          document.getElementById('nt').innerHTML='上传失败，请检查图片格式...或者图片可能太大...重新拖拽TAT';
+      }else{
+          document.getElementById('showfirst').src=backurl;
+          prompt('返回的图片服务器地址',backurl);
+          document.getElementById('nt').innerHTML='上传成功，拖拽文件或者点击页面.';
+      }
+  }	
+  document.getElementById('wbpic').onchange=function(){
+      document.getElementById('nt').innerHTML='正在上传OAO...';
+      setTimeout(upload,500);
+  }
+  </script>
+  </body>
+</html>

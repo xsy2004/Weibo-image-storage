@@ -1,0 +1,38 @@
+.fp{
+    width:100%;
+    height:100%;
+    opacity:0.01;
+    z-index:2;
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0px;
+}
+
+.notice{
+z-index:1;
+position:absolute;
+left:0px;
+right:0px;
+top:0px;
+padding:0 auto;
+display:block;
+color:#333;
+text-align: center;
+}
+
+img{
+    max-height:600px;
+    max-width:100%;
+    border-radius:10px;
+    box-shadow: 0 0 70px 30px rgb(249, 249, 249) inset;
+}
+
+.hist{
+    position:absolute;
+left:0px;
+right:0px;
+z-index:3;
+text-align: center;
+bottom:0px;
+}
